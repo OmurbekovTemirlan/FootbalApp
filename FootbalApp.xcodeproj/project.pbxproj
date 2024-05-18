@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		1853DB9D2BF8E70B001E9D2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853DB9C2BF8E70B001E9D2C /* AppDelegate.swift */; };
 		1853DB9F2BF8E70B001E9D2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853DB9E2BF8E70B001E9D2C /* SceneDelegate.swift */; };
-		1853DBA12BF8E70B001E9D2C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853DBA02BF8E70B001E9D2C /* ViewController.swift */; };
-		1853DBA42BF8E70B001E9D2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1853DBA22BF8E70B001E9D2C /* Main.storyboard */; };
+		1853DBA12BF8E70B001E9D2C /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853DBA02BF8E70B001E9D2C /* HomeVC.swift */; };
 		1853DBA62BF8E70E001E9D2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1853DBA52BF8E70E001E9D2C /* Assets.xcassets */; };
 		1853DBA92BF8E70E001E9D2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1853DBA72BF8E70E001E9D2C /* LaunchScreen.storyboard */; };
+		1853DBB62BF8FFD8001E9D2C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853DBB52BF8FFD8001E9D2C /* BaseViewController.swift */; };
+		1853DBB92BF9006D001E9D2C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853DBB82BF9006D001E9D2C /* UIView+Extension.swift */; };
+		1853DBBC2BF9016E001E9D2C /* LigueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853DBBB2BF9016E001E9D2C /* LigueCollectionViewCell.swift */; };
+		545B4386D4326D4A5D987DED /* Pods_FootbalApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAEA5871C846CD3F4707A416 /* Pods_FootbalApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1853DB992BF8E70B001E9D2C /* FootbalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootbalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1853DB9C2BF8E70B001E9D2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1853DB9E2BF8E70B001E9D2C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1853DBA02BF8E70B001E9D2C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1853DBA32BF8E70B001E9D2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1853DBA02BF8E70B001E9D2C /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		1853DBA52BF8E70E001E9D2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1853DBA82BF8E70E001E9D2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1853DBAA2BF8E70E001E9D2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1853DBB52BF8FFD8001E9D2C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		1853DBB82BF9006D001E9D2C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		1853DBBB2BF9016E001E9D2C /* LigueCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigueCollectionViewCell.swift; sourceTree = "<group>"; };
+		389D2C06E6A774683437A60D /* Pods-FootbalApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootbalApp.debug.xcconfig"; path = "Target Support Files/Pods-FootbalApp/Pods-FootbalApp.debug.xcconfig"; sourceTree = "<group>"; };
+		54C21E7C832AF6A9EFE3252D /* Pods-FootbalApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootbalApp.release.xcconfig"; path = "Target Support Files/Pods-FootbalApp/Pods-FootbalApp.release.xcconfig"; sourceTree = "<group>"; };
+		FAEA5871C846CD3F4707A416 /* Pods_FootbalApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FootbalApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				545B4386D4326D4A5D987DED /* Pods_FootbalApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +51,8 @@
 			children = (
 				1853DB9B2BF8E70B001E9D2C /* FootbalApp */,
 				1853DB9A2BF8E70B001E9D2C /* Products */,
+				9D039BC57B45E81E222885D3 /* Pods */,
+				ADD79352CB2F2462C7EB7FC6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +67,90 @@
 		1853DB9B2BF8E70B001E9D2C /* FootbalApp */ = {
 			isa = PBXGroup;
 			children = (
-				1853DB9C2BF8E70B001E9D2C /* AppDelegate.swift */,
-				1853DB9E2BF8E70B001E9D2C /* SceneDelegate.swift */,
-				1853DBA02BF8E70B001E9D2C /* ViewController.swift */,
-				1853DBA22BF8E70B001E9D2C /* Main.storyboard */,
-				1853DBA52BF8E70E001E9D2C /* Assets.xcassets */,
-				1853DBA72BF8E70E001E9D2C /* LaunchScreen.storyboard */,
+				1853DBB02BF8E72C001E9D2C /* App */,
+				1853DBB72BF90034001E9D2C /* Extensions */,
+				1853DBB12BF8E739001E9D2C /* Modules */,
+				1853DBB22BF8E77C001E9D2C /* Recources */,
 				1853DBAA2BF8E70E001E9D2C /* Info.plist */,
 			);
 			path = FootbalApp;
+			sourceTree = "<group>";
+		};
+		1853DBB02BF8E72C001E9D2C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1853DB9C2BF8E70B001E9D2C /* AppDelegate.swift */,
+				1853DB9E2BF8E70B001E9D2C /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		1853DBB12BF8E739001E9D2C /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				1853DBB42BF8FFAD001E9D2C /* Base */,
+				1853DBB32BF8EB01001E9D2C /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		1853DBB22BF8E77C001E9D2C /* Recources */ = {
+			isa = PBXGroup;
+			children = (
+				1853DBA52BF8E70E001E9D2C /* Assets.xcassets */,
+				1853DBA72BF8E70E001E9D2C /* LaunchScreen.storyboard */,
+			);
+			path = Recources;
+			sourceTree = "<group>";
+		};
+		1853DBB32BF8EB01001E9D2C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1853DBA02BF8E70B001E9D2C /* HomeVC.swift */,
+				1853DBBA2BF90149001E9D2C /* Components */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		1853DBB42BF8FFAD001E9D2C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				1853DBB52BF8FFD8001E9D2C /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		1853DBB72BF90034001E9D2C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1853DBB82BF9006D001E9D2C /* UIView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1853DBBA2BF90149001E9D2C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1853DBBB2BF9016E001E9D2C /* LigueCollectionViewCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9D039BC57B45E81E222885D3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				389D2C06E6A774683437A60D /* Pods-FootbalApp.debug.xcconfig */,
+				54C21E7C832AF6A9EFE3252D /* Pods-FootbalApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		ADD79352CB2F2462C7EB7FC6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAEA5871C846CD3F4707A416 /* Pods_FootbalApp.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +160,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1853DBAD2BF8E70E001E9D2C /* Build configuration list for PBXNativeTarget "FootbalApp" */;
 			buildPhases = (
+				9DA81D4D0946D5A84D020BE5 /* [CP] Check Pods Manifest.lock */,
 				1853DB952BF8E70B001E9D2C /* Sources */,
 				1853DB962BF8E70B001E9D2C /* Frameworks */,
 				1853DB972BF8E70B001E9D2C /* Resources */,
+				4A527306DB8217867FD2EAFF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,19 +215,63 @@
 			files = (
 				1853DBA92BF8E70E001E9D2C /* LaunchScreen.storyboard in Resources */,
 				1853DBA62BF8E70E001E9D2C /* Assets.xcassets in Resources */,
-				1853DBA42BF8E70B001E9D2C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4A527306DB8217867FD2EAFF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FootbalApp/Pods-FootbalApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FootbalApp/Pods-FootbalApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FootbalApp/Pods-FootbalApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9DA81D4D0946D5A84D020BE5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FootbalApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1853DB952BF8E70B001E9D2C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1853DBA12BF8E70B001E9D2C /* ViewController.swift in Sources */,
+				1853DBA12BF8E70B001E9D2C /* HomeVC.swift in Sources */,
+				1853DBB62BF8FFD8001E9D2C /* BaseViewController.swift in Sources */,
 				1853DB9D2BF8E70B001E9D2C /* AppDelegate.swift in Sources */,
+				1853DBBC2BF9016E001E9D2C /* LigueCollectionViewCell.swift in Sources */,
+				1853DBB92BF9006D001E9D2C /* UIView+Extension.swift in Sources */,
 				1853DB9F2BF8E70B001E9D2C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +279,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1853DBA22BF8E70B001E9D2C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1853DBA32BF8E70B001E9D2C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1853DBA72BF8E70E001E9D2C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -203,7 +327,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -266,7 +390,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -287,6 +411,7 @@
 		};
 		1853DBAE2BF8E70E001E9D2C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 389D2C06E6A774683437A60D /* Pods-FootbalApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -296,9 +421,9 @@
 				INFOPLIST_FILE = FootbalApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,14 +431,19 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = omurbekov.FootbalApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		1853DBAF2BF8E70E001E9D2C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54C21E7C832AF6A9EFE3252D /* Pods-FootbalApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -323,9 +453,9 @@
 				INFOPLIST_FILE = FootbalApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -333,9 +463,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = omurbekov.FootbalApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
