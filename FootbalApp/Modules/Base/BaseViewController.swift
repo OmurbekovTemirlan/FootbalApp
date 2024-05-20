@@ -15,14 +15,14 @@ class BaseViewController: UIViewController {
         setup()
     }
     
-    func setup(){
+    func setup() {
         setupAdd()
         setupLayouts()
     }
     
-    func setupAdd(){ }
+    func setupAdd() { }
     
-    func setupLayouts(){ }
+    func setupLayouts() { }
     
     func showAlert(title: String, massage: String){
         let alert = UIAlertController(title: title,

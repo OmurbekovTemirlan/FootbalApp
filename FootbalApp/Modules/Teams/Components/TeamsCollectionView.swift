@@ -8,141 +8,79 @@
 import UIKit
 import SnapKit
 
-class TeamsView: BaseView {
+class TeamsCollectionViewCell: UICollectionViewCell {
     
-   private var strTeam: UILabel = {
-       let view = UILabel()
-       view.font = .systemFont(ofSize: 16, weight: .regular)
-       return view
-   }()
-    
-   private var intFormedYear: UILabel = {
-       let view = UILabel()
-       view.font = .systemFont(ofSize: 16, weight: .regular)
-       return view
-   }()
-    
-   private var strLeague: UILabel = {
-       let view = UILabel()
-       view.font = .systemFont(ofSize: 16, weight: .regular)
-       return view
-   }()
-    
-   private var strStadium: UILabel = {
-       let view = UILabel()
-       view.font = .systemFont(ofSize: 16, weight: .regular)
-       return view
-   }()
-    
-   private var strStadiumThumb: UIImageView = {
-       let view = UIImageView()
-       return view
-   }()
-    
-    private var strStadiumDescription: UILabel = {
-        let view = UILabel()
-        view.font = .systemFont(ofSize: 16, weight: .regular)
-        return view
-    }()
-    
-    private var strStadiumLocation: UILabel = {
-        let view = UILabel()
-        view.font = .systemFont(ofSize: 16, weight: .regular)
-        return view
-    }()
-    
-    private var intStadiumCapacity: UILabel = {
-        let view = UILabel()
-        view.font = .systemFont(ofSize: 16, weight: .regular)
-        return view
-    }()
-    
-    private var strInstagram: UILabel = {
-        let view = UILabel()
-        view.font = .systemFont(ofSize: 16, weight: .regular)
-        view.textColor = .black
-        return view
-    }()
-    
-    private var strCountry: UILabel = {
-        let view = UILabel()
-        view.font = .systemFont(ofSize: 16, weight: .regular)
-        view.textColor = .black
-        return view
-    }()
+    static let reusID = "TeamsCollectionViewCell"
     
     private var strTeamBadge: UIImageView = {
         let view = UIImageView()
         return view
     }()
     
-    private var strTeamLogo: UIImageView = {
-        let view = UIImageView()
+    
+    private var strTeam: UILabel = {
+        let view = UILabel()
+        view.font = .systemFont(ofSize: 16, weight: .bold)
+        view.textAlignment = .center
         return view
     }()
     
-    override func setup() {
-        super.setup()
-        
+    private var strLeague: UILabel = {
+        let view = UILabel()
+        view.font = .systemFont(ofSize: 16, weight: .regular)
+        view.numberOfLines = 0
+        view.textAlignment = .center
+        return view
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
     }
     
-    override func setupAdd() {
-        super.setupAdd()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setup() {
+        setupAdd()
+        setupLayouts()
+    }
+    
+    private func setupAdd() {
         add {
-            strTeam
-            intFormedYear
-            strLeague
-            strStadium
-            strStadiumThumb
-            strStadiumDescription
-            strStadiumLocation
-            intStadiumCapacity
-            strInstagram
-            strCountry
             strTeamBadge
-            strTeamLogo
+            strTeam
+            strLeague
         }
     }
-    
-    override func setupLayouts() {
-        super.setupLayouts()
+
+    private func setupLayouts() {
+        strTeamBadge.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(10)
+            make.directionalHorizontalEdges.equalToSuperview().inset(1)
+            make.height.equalTo(135)
+        }
         strTeam.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.centerX.equalToSuperview()
+            make.top.equalTo(strTeamBadge.snp.bottom).offset(15)
+            make.directionalHorizontalEdges.equalToSuperview()
+        }
+        strLeague.snp.makeConstraints { make in
+            make.top.equalTo(strTeam.snp.bottom).offset(15)
+            make.directionalHorizontalEdges.equalToSuperview().inset(5)
         }
     }
     
     func fill(with item: TeamModel) {
-        strTeam.text =  "Имя: /n \(item.strTeam)"
-        intFormedYear.text = item.intFormedYear
+        strTeam.text =  item.strTeam
         strLeague.text = item.strLeague
-        strStadium.text = item.strStadium
-        ImageDownloader.shared.loadImage(
-            from: item.strStadiumThumb) { [weak self] result in
+        ImageDownloader.shared.loadImage(from: item.strTeamBadge) { [weak self] result in
+            DispatchQueue.main.async { [weak self] in
                 if case .success(let image) = result {
-                    DispatchQueue.main.async {
-                        self?.strStadiumThumb.image = image
-                    }
+                    self?.strTeamBadge.image = image
                 }
-            }
-        strStadiumDescription.text = item.strStadiumDescription
-        strStadiumLocation.text = item.strStadiumLocation
-        intStadiumCapacity.text = item.intStadiumCapacity
-        strInstagram.text = item.strInstagram
-        strCountry.text = item.strCountry
-        ImageDownloader.shared.loadImage(
-            from: item.strTeamBadge) { [weak self] result in
-                if case .success(let image) = result {
-                    DispatchQueue.main.async {
-                        self?.strTeamBadge.image = image
-                    }
-                }
-            }
-        ImageDownloader.shared.loadImage(
-            from: item.strTeamLogo) { [weak self] result in
-            if case .success(let image) = result {
-                self?.strTeamLogo.image = image
             }
         }
     }
+    
 }

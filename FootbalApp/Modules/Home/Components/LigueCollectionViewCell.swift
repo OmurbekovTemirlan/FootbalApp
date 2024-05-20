@@ -11,15 +11,31 @@ import SnapKit
 
 class LigueCollectionViewCell: UICollectionViewCell {
     
-    private let ligueImageView = UIImageView()
+    private let ligueTitleLabel: UILabel = {
+        let view = UILabel()
+        view.font = .systemFont(ofSize: 17, weight: .semibold)
+        view.textColor = .systemBlue
+        view.textAlignment = .center
+        return view
+    }()
     
-    private let ligueTitleLabel = UILabel()
+    private let ligueSeeasonLabel: UILabel = {
+        let view = UILabel()
+        view.font = .systemFont(ofSize: 17, weight: .semibold)
+        view.textColor = .black
+        view.textAlignment = .center
+        view.numberOfLines = 0
+        return view
+    }()
     
-    private let ligueSeeasonLabel = UILabel()
+    static let reusID = "LigueCollectionViewCell"
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
+        
+        backgroundColor = .lightGray
+        layer.cornerRadius = 12
     }
     
     required init?(coder: NSCoder) {
@@ -33,24 +49,25 @@ class LigueCollectionViewCell: UICollectionViewCell {
     
     private func setupAdd() {
         add {
-            ligueImageView
             ligueTitleLabel
             ligueSeeasonLabel
         }
     }
     
     private func setupLayouts() {
-        ligueImageView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.directionalHorizontalEdges.equalToSuperview().inset(20)
-            make.height.equalTo(160)
-            make.width.equalTo(160)
-        }
         ligueTitleLabel.snp.makeConstraints { make in
-            <#code#>
+            make.top.equalToSuperview().offset(10)
+            make.directionalHorizontalEdges.equalToSuperview()
         }
         ligueSeeasonLabel.snp.makeConstraints { make in
-            <#code#>
+            make.top.equalTo(ligueTitleLabel.snp.bottom)
+            make.directionalHorizontalEdges.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-10)
         }
+    }
+    
+    func fill(with item: Ligue) {
+        ligueTitleLabel.text = item.strLeague
+        ligueSeeasonLabel.text = item.strLeagueAlternate
     }
 }

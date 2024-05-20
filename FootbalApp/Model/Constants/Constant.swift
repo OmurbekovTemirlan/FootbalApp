@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+
+enum Constant {
+    static let baseURL = URL(string: "https://www.thesportsdb.com/api/v1/json/3/")!
+}

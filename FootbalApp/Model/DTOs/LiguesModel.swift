@@ -8,12 +8,11 @@
 import UIKit
 
 struct AllLigues: Codable {
-    var ligues: [Ligue] = []
+    var leagues: [Ligue] = []
 }
-
 struct Ligue: Codable {
-    let strLeague: String
-    let strLeagueAlternate: String
+    var strLeague: String
+    var strLeagueAlternate: String
 }
 
 

@@ -1,5 +1,5 @@
 //
-//  SportsModel.swift
+//  TeamsModel.swift
 //  FootbalApp
 //
 //  Created by Apple on 19.5.2024.
@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct SportsModel: Codable {
-    var sports: [SportModel] = []
+struct TeamsModel: Codable {
+    var teams: [TeamModel] = []
 }
-struct SportModel: Codable {
-    var strSport: String
-    var strFormat: String
-    var strSportThumb: String
-    var strSportDescription: String
+struct TeamModel: Codable {
+    var strTeam: String
+    var strLeague: String
+    var strCountry: String
+    var strTeamBadge: String
 }
