@@ -11,6 +11,7 @@ struct TeamsModel: Codable {
     var teams: [TeamModel] = []
 }
 struct TeamModel: Codable {
+    var idTeam: String
     var strTeam: String
     var strLeague: String
     var strCountry: String

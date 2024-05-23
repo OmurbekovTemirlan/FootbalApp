@@ -24,6 +24,8 @@
 		1853DBD12BF93F01001E9D2C /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853DBD02BF93F01001E9D2C /* BaseView.swift */; };
 		1853DBD32BFA4706001E9D2C /* LoadImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853DBD22BFA4706001E9D2C /* LoadImage+Extension.swift */; };
 		1853DBD52BFA598E001E9D2C /* ClubsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853DBD42BFA598E001E9D2C /* ClubsModel.swift */; };
+		1853DBD82BFB811F001E9D2C /* ClubVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853DBD72BFB811F001E9D2C /* ClubVC.swift */; };
+		1853DBDB2BFB93DE001E9D2C /* ClubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853DBDA2BFB93DE001E9D2C /* ClubView.swift */; };
 		545B4386D4326D4A5D987DED /* Pods_FootbalApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAEA5871C846CD3F4707A416 /* Pods_FootbalApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,8 @@
 		1853DBD02BF93F01001E9D2C /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		1853DBD22BFA4706001E9D2C /* LoadImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoadImage+Extension.swift"; sourceTree = "<group>"; };
 		1853DBD42BFA598E001E9D2C /* ClubsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubsModel.swift; sourceTree = "<group>"; };
+		1853DBD72BFB811F001E9D2C /* ClubVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubVC.swift; sourceTree = "<group>"; };
+		1853DBDA2BFB93DE001E9D2C /* ClubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubView.swift; sourceTree = "<group>"; };
 		389D2C06E6A774683437A60D /* Pods-FootbalApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootbalApp.debug.xcconfig"; path = "Target Support Files/Pods-FootbalApp/Pods-FootbalApp.debug.xcconfig"; sourceTree = "<group>"; };
 		54C21E7C832AF6A9EFE3252D /* Pods-FootbalApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootbalApp.release.xcconfig"; path = "Target Support Files/Pods-FootbalApp/Pods-FootbalApp.release.xcconfig"; sourceTree = "<group>"; };
 		FAEA5871C846CD3F4707A416 /* Pods_FootbalApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FootbalApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +114,7 @@
 				1853DBB42BF8FFAD001E9D2C /* Base */,
 				1853DBB32BF8EB01001E9D2C /* Home */,
 				1853DBC92BF933E2001E9D2C /* Teams */,
+				1853DBD62BFB80C4001E9D2C /* ClubsDisc */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -207,6 +212,23 @@
 			isa = PBXGroup;
 			children = (
 				1853DBCE2BF93EE3001E9D2C /* TeamsCollectionView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		1853DBD62BFB80C4001E9D2C /* ClubsDisc */ = {
+			isa = PBXGroup;
+			children = (
+				1853DBD72BFB811F001E9D2C /* ClubVC.swift */,
+				1853DBD92BFB8159001E9D2C /* Components */,
+			);
+			path = ClubsDisc;
+			sourceTree = "<group>";
+		};
+		1853DBD92BFB8159001E9D2C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1853DBDA2BFB93DE001E9D2C /* ClubView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -348,6 +370,8 @@
 				1853DBB62BF8FFD8001E9D2C /* BaseViewController.swift in Sources */,
 				1853DBCF2BF93EE3001E9D2C /* TeamsCollectionView.swift in Sources */,
 				1853DBD32BFA4706001E9D2C /* LoadImage+Extension.swift in Sources */,
+				1853DBDB2BFB93DE001E9D2C /* ClubView.swift in Sources */,
+				1853DBD82BFB811F001E9D2C /* ClubVC.swift in Sources */,
 				1853DBC62BF9113A001E9D2C /* Constant.swift in Sources */,
 				1853DBC32BF90EB1001E9D2C /* NetworkService.swift in Sources */,
 				1853DBBF2BF90809001E9D2C /* LiguesModel.swift in Sources */,

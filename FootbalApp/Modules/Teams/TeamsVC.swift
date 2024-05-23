@@ -16,11 +16,10 @@ class TeamsViewController: BaseViewController {
         let interItemSpacing: CGFloat = 15
         let totalSpacing = (numberOfItemsPerRow - 1) * interItemSpacing
         let itemWidth = (UIScreen.main.bounds.width - totalSpacing) / numberOfItemsPerRow
-        layout.itemSize = CGSize(width: itemWidth, height: 300)
+        layout.itemSize = CGSize(width: itemWidth, height: 280)
         layout.minimumInteritemSpacing = interItemSpacing
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.showsVerticalScrollIndicator = false
-        view.backgroundColor = .clear
         return view
     }()
     
@@ -58,6 +57,7 @@ class TeamsViewController: BaseViewController {
     private func setupCollection() {
         TeamsCollectionView.dataSource = self
         TeamsCollectionView.register(TeamsCollectionViewCell.self, forCellWithReuseIdentifier: TeamsCollectionViewCell.reusID)
+        TeamsCollectionView.delegate = self
     }
     
     private func getTeams(with sport: String) {
@@ -90,5 +90,15 @@ extension TeamsViewController: UICollectionViewDataSource {
             for: indexPath) as! TeamsCollectionViewCell
         cell.fill(with: teams[indexPath.row])
         return cell
+    }
+}
+
+extension TeamsViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = ClubViewController()
+        let selectedTeamsCategory = teams[indexPath.row]
+        vc.selectedTeams = selectedTeamsCategory.strTeam
+//        vc.modalPresentationStyle = .fullScreen
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

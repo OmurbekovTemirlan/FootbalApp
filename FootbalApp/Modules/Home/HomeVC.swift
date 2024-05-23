@@ -8,17 +8,38 @@
 import UIKit
 import SnapKit
 
-class homeViewController: BaseViewController {
+class HomeViewController: BaseViewController {
 
-    private let ligueCollectionView: UICollectionView = {
+    private lazy var ligueCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.itemSize = CGSize(width: 350, height: 70)
         layout.minimumInteritemSpacing = 15
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.showsVerticalScrollIndicator = false
+        view.refreshControl = refreshControll
         return view
     }()
+    
+    private lazy var refreshControll: UIRefreshControl = {
+        let controll = UIRefreshControl()
+        controll.addTarget(self, action: #selector(reshreshProducts), for: .valueChanged)
+        controll.attributedTitle = NSAttributedString(string: "")
+        return controll
+    }()
+    
+    private lazy var activity: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView()
+        view.hidesWhenStopped = true
+        view.style = .large
+        return view
+    }()
+    
+    private var isLoading: Bool = false {
+        didSet {
+            _ = isLoading ? activity.startAnimating() : activity.stopAnimating()
+        }
+    }
     
     private var ligues: [Ligue] = []
     
@@ -36,6 +57,7 @@ class homeViewController: BaseViewController {
         super.setupAdd()
         view.add {
             ligueCollectionView
+            activity
         }
     }
     
@@ -47,6 +69,10 @@ class homeViewController: BaseViewController {
             make.directionalHorizontalEdges.equalToSuperview().inset(16)
             make.bottom.equalToSuperview().offset(10)
         }
+        activity.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(10)
+            make.centerX.centerY.equalToSuperview()
+        }
     }
     
     private func setupCollection() {
@@ -56,9 +82,11 @@ class homeViewController: BaseViewController {
     }
     
     private func getLigues() {
+        isLoading = true
         networkService.getLigues { [weak self] result in
             DispatchQueue.main.async { [weak self] in
                 guard let `self` = self else { return }
+                self.isLoading = false
                 switch result {
                 case .success(let model):
                     self.ligues = model
@@ -69,9 +97,16 @@ class homeViewController: BaseViewController {
             }
         }
     }
+    
+    @objc
+    private func reshreshProducts() {
+        refreshControll.beginRefreshing()
+        getLigues()
+        refreshControll.endRefreshing()
+    }
 }
 
-extension homeViewController: UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         ligues.count
     }
@@ -83,7 +118,7 @@ extension homeViewController: UICollectionViewDataSource {
     }
 }
 
-extension homeViewController: UICollectionViewDelegate {
+extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = TeamsViewController()
         let selectedLigueCategory = ligues[indexPath.row]
@@ -91,4 +126,5 @@ extension homeViewController: UICollectionViewDelegate {
 //        vc.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(vc, animated: true)
     }
+    
 }

@@ -59,7 +59,7 @@ class TeamsCollectionViewCell: UICollectionViewCell {
         strTeamBadge.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10)
             make.directionalHorizontalEdges.equalToSuperview().inset(1)
-            make.height.equalTo(135)
+            make.height.equalTo(120)
         }
         strTeam.snp.makeConstraints { make in
             make.top.equalTo(strTeamBadge.snp.bottom).offset(15)
@@ -75,12 +75,11 @@ class TeamsCollectionViewCell: UICollectionViewCell {
         strTeam.text =  item.strTeam
         strLeague.text = item.strLeague
         ImageDownloader.shared.loadImage(from: item.strTeamBadge) { [weak self] result in
-            DispatchQueue.main.async { [weak self] in
                 if case .success(let image) = result {
+                    DispatchQueue.main.async {
                     self?.strTeamBadge.image = image
                 }
             }
         }
     }
-    
 }

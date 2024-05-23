@@ -65,4 +65,36 @@ class NetworkService {
             }
         }.resume()
     }
+    
+    func getClubDetails(with name: String, complition: @escaping (Result<ClubModel, Error>) -> Void) {
+        var urlComponents = URLComponents(url: Constant.baseURL.appendingPathComponent("searchteams.php"), resolvingAgainstBaseURL: false)
+        
+        urlComponents?.queryItems = [
+            URLQueryItem(name: "t", value: name),
+        ]
+        
+        guard let components = urlComponents else { return }
+        
+        let request = URLRequest(url: components.url!)
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            if let error = error {
+                complition(.failure(error))
+            }
+            
+            guard let data = data else {
+                complition(.failure(error!))
+                return
+            }
+            do {
+                let model = try self.decoder.decode(ClubsModel.self, from: data)
+                if let clubsDetails = model.teams.first {
+                    complition(.success(clubsDetails))
+                }
+            } catch {
+                complition(.failure(error))
+            }
+        }.resume()
+    }
 }
